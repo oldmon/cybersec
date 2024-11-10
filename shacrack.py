@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+Educationa; sha-1 brute force attack
+Usage: python shacrack.py <SHA-1 hash value>
+"""
 import datetime
 import itertools
 import hashlib
@@ -5,8 +10,9 @@ import multiprocessing
 import sys
 
 
-def generate_combinations(words):
-    for combination in itertools.product('abcdefghijklmnopqrstuvwxyz', repeat=words):
+def generate_combinations(wordlen):
+    '''sha-1 brute force attack with multicpu'''
+    for combination in itertools.product('abcdefghijklmnopqrstuvwxyz', repeat=wordlen):
         bruteinput=''.join(combination)
         s = hashlib.sha1()
         s.update(bruteinput.encode("utf-8"))

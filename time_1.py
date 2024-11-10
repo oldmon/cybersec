@@ -1,3 +1,6 @@
+"""
+Test for time
+"""
 import datetime
 start_time = datetime.datetime.now()
 # 你的程式碼
